@@ -1,0 +1,40 @@
+<virtual-sensor name="MultiFormatWebInput" priority="10">
+	<processing-class>
+		<class-name>gsn.vsensor.BridgeWebInputVirtualSensor</class-name>
+		<init-params />
+		
+		<web-input password="change_packet_type">
+			<command name="packet_type">
+				<field name="packet type" type="select:1|2|3">three</field>
+			</command>
+	        </web-input>
+		
+		
+		<output-structure>
+			<field name="light" type="double" />
+			<field name="temperature" type="double" />
+			<field name="packet_type" type="double" />
+		</output-structure>
+	</processing-class>
+	<description>This sensor simulates light and temperature readings
+		every one second with the possibility to change the packet type via web interface.
+	</description>
+	<life-cycle pool-size="10" />
+	<addressing>
+		<predicate key="geographical">Sensor 114 @ EPFL</predicate>
+		<predicate key="LATITUDE">41.540000</predicate>
+		<predicate key="LONGITUDE">12.270000</predicate>
+	</addressing>
+	<storage history-size="5m" />
+	<streams>
+		<stream name="input1">
+			<source alias="source1" sampling-rate="1" storage-size="1">
+				<address wrapper="MultiFormatWebInputWrapper">
+					<!--		<predicate key="rate">2000</predicate>   -->
+				</address>
+				<query>SELECT light, temperature, packet_type, timed FROM wrapper</query>
+			</source>
+			<query>SELECT light, temperature, packet_type, timed FROM source1</query>
+		</stream>
+	</streams>
+</virtual-sensor>

@@ -1,0 +1,36 @@
+<virtual-sensor name="WebInput" priority="10">
+	<processing-class>
+		<class-name>gsn.vsensor.WebInputVirtualSensor</class-name>
+		<init-params />
+		
+		<web-input password="switcher">
+			<command name="change_switcher_value">
+				<field name="switcher" type="int">three</field>
+			</command>
+	        </web-input>
+		
+		
+		<output-structure>
+			<field name="switcher" type="int" />
+		</output-structure>
+	</processing-class>
+	<description>This sensor simulates the possibility to change a sensor value from the web interface.
+	</description>
+	<life-cycle pool-size="10" />
+	<addressing>
+		<predicate key="geographical">Sensor 114 @ EPFL</predicate>
+		<predicate key="LATITUDE">46.520000</predicate>
+		<predicate key="LONGITUDE">6.565000</predicate>
+	</addressing>
+	<storage history-size="5m" />
+	<streams>
+		<stream name="input1">
+			<source alias="source1" sampling-rate="1" storage-size="1m">
+				<address wrapper="WebInput">
+				</address>
+				<query>SELECT switcher FROM wrapper</query>
+			</source>
+			<query>SELECT switcher FROM source1</query>
+		</stream>
+	</streams>
+</virtual-sensor>

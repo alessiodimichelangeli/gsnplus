@@ -1,0 +1,30 @@
+<virtual-sensor name="TestTinyOS" priority="11">
+	<processing-class>
+		<class-name>gsn.vsensor.BridgeVirtualSensor</class-name>
+		<output-structure>
+			
+		</output-structure>
+	</processing-class>
+
+	<description></description>
+	<life-cycle pool-size="10" />
+	<addressing>
+		<predicate key="geographical">Not Specified</predicate>
+		<predicate key="LATITUDE">37.5419</predicate>
+		<predicate key="LONGITUDE">-122.1419</predicate>
+	</addressing>
+	<storage history-size="10" />
+	<streams>
+		<stream name="input1">
+			<source alias="TestTinyOS" sampling-rate="1" storage-size="1">
+				<address wrapper="TinyTest">
+					
+				</address>
+				<query>
+				</query>
+			</source>
+			<query>
+			</query>
+		</stream>
+	</streams>
+</virtual-sensor>

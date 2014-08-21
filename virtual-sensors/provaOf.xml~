@@ -1,0 +1,53 @@
+<virtual-sensor name="provaOf" priority="11">
+	<processing-class>
+		<class-name>gsn.vsensor.WebInputVirtualSensor</class-name>
+		
+		<init-params />
+		
+		<web-input password="interval">
+			<command name="change_interval_value">
+				<field name="interval" type="int">three</field>
+			</command>
+	        </web-input>
+		
+		<output-structure>
+			<field name="version" type="int" />
+			<field name="id" type="int"/>
+			<field name="count" type="int"/>
+			<field name="interval" type="int" />
+			<field name="readings0" type="int" />
+			<field name="readings1" type="int" />
+			<field name="readings2" type="int" />
+			<field name="readings3" type="int" />
+			<field name="readings4" type="int" />
+			<field name="readings5" type="int" />
+			<field name="readings6" type="int" />
+			<field name="readings7" type="int" />
+			<field name="readings8" type="int" />
+			<field name="readings9" type="int" />
+		</output-structure>
+		
+		
+	</processing-class>
+
+	<description></description>
+	<life-cycle pool-size="10" />
+	<addressing>
+		<predicate key="geographical">Not Specified</predicate>
+		<predicate key="LATITUDE">37.5419</predicate>
+		<predicate key="LONGITUDE">-122.1419</predicate>
+	</addressing>
+	<storage history-size="10" />
+	<streams>
+		<stream name="input1">
+			<source alias="source1" sampling-rate="1" storage-size="1s">
+				<address wrapper="mytinyos">
+					<predicate key="host">localhost</predicate>
+					<predicate key="port">9002</predicate>
+				</address>
+				<query>SELECT * FROM wrapper</query>
+			</source>
+			<query>SELECT version, id, count, interval, readings0, readings1, readings2, readings3, readings4, readings5, readings6, readings7, readings8, readings9  FROM source1</query>
+		</stream>
+	</streams>
+</virtual-sensor>

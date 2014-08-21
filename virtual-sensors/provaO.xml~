@@ -1,0 +1,35 @@
+<virtual-sensor name="provaO" priority="11">
+	<processing-class>
+		<class-name>gsn.vsensor.BridgeVirtualSensor</class-name>
+		
+		<init-params />
+		
+		<output-structure>
+			<field name="id" type="int"/>
+			<field name="count" type="int"/>
+		</output-structure>
+		
+		
+	</processing-class>
+
+	<description></description>
+	<life-cycle pool-size="10" />
+	<addressing>
+		<predicate key="geographical">Not Specified</predicate>
+		<predicate key="LATITUDE">37.5419</predicate>
+		<predicate key="LONGITUDE">-122.1419</predicate>
+	</addressing>
+	<storage history-size="10" />
+	<streams>
+		<stream name="input1">
+			<source alias="sourceSerial" sampling-rate="1" storage-size="1">
+				<address wrapper="mytinyos">
+					<predicate key="host">localhost</predicate>
+					<predicate key="port">9002</predicate>
+				</address>
+				<query>SELECT * FROM wrapper</query>
+			</source>
+			<query>SELECT id FROM sourceSerial</query>
+		</stream>
+	</streams>
+</virtual-sensor>

@@ -1,0 +1,50 @@
+<virtual-sensor name="TelosbNoMessageEditsVS1" priority="11">
+	<processing-class>
+		<class-name>gsn.vsensor.BridgeWebInputVirtualSensor</class-name>
+		
+		<init-params />
+		
+		<output-structure>
+			
+			<field name="version" type="int" />
+			<field name="interval" type="int" />
+			<field name="id" type="int"/>
+			<field name="count" type="int"/>
+			
+			<field name="readingsTemp0" type="int" />
+			<field name="readingsTemp1" type="int" />
+			<field name="readingsHum0" type="int" />
+			<field name="readingsHum1" type="int" />
+			<field name="readingsLum0" type="int" />
+			<field name="readingsLum1" type="int" />
+			<field name="readingsPhoto0" type="int" />
+			<field name="readingsPhoto1" type="int" />
+			
+		</output-structure>
+		
+		
+	</processing-class>
+
+	<description>
+	This virtual sensor allows communication with a TinyOs based telosb sensors network. 
+	</description>
+	<life-cycle pool-size="10" />
+	<addressing>
+		<predicate key="geographical">Not Specified</predicate>
+		<predicate key="LATITUDE">37.5419</predicate>
+		<predicate key="LONGITUDE">-122.1419</predicate>
+	</addressing>
+	<storage history-size="10" />
+	<streams>
+		<stream name="input1">
+			<source alias="source1" sampling-rate="1" storage-size="1s">
+				<address wrapper="TinyOsWrapper">
+					<predicate key="host">localhost</predicate>
+					<predicate key="port">9002</predicate>
+				</address>
+				<query>SELECT * FROM wrapper</query>
+			</source>
+			<query>SELECT * FROM source1</query>
+		</stream>
+	</streams>
+</virtual-sensor>

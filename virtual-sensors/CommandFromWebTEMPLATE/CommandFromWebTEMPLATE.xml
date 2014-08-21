@@ -1,0 +1,59 @@
+<!-- Please remember this is only a template, useful to learn how to write a virtual sensor for web input.  -->
+<!-- For more details of how to write a Virtual Sensor for GSN, please read the official wiki at https://github.com/LSIR/gsn/wiki -->
+
+<virtual-sensor name="CommandFromWebTEMPALTE" priority="10">
+
+	<processing-class>
+	
+		<class-name>gsn.vsensor.BridgeWebInputVirtualSensor</class-name>
+		
+		<init-params />
+		
+		<!-- web input part -->
+		<web-input password="INPUT">
+			
+			<!-- For example you want to change a value from the gsn interface.
+			See the relative wrapper template (CommandFromWebTEMPLATE) to understand -->
+			<command name="CHANGE_FIELD_VALUE">
+				<field name="FIELD_NAME" type="FIELD_TYPE">DESCRIPTION...</field>
+			</command>
+	        
+	        </web-input>
+		<!-- end of web input part -->
+		
+		
+		<!-- The output structure has to be the same as written in the Wrapper (please see the CommandFromWebWrapperTEMPLATE) -->
+		<output-structure>
+		
+			<field name="FIELD_NAME_1" type="int" />
+			
+		</output-structure>
+		
+	</processing-class>
+	
+	<description>
+		<!-- If you want write a description in this tag -->
+	</description>
+	
+	<life-cycle pool-size="10" />
+	
+	<addressing>
+		<!-- If you want to localize your base station node edit LAT_VALUE and LONG_VALUE  -->
+		<predicate key="geographical">Not Specified</predicate>
+		<predicate key="LATITUDE">LAT_VALUE</predicate>
+		<predicate key="LONGITUDE">LONG_VALUE</predicate>
+	</addressing>
+	
+	<storage history-size="5m" />
+	<streams>
+		<stream name="input1">
+			<source alias="source1" sampling-rate="1" storage-size="1s">
+				<address wrapper="TINYOS_WRAPPER_NAME (see CommandFromWebTEMPLATE file)">
+				</address>
+				
+				<query>SELECT * FROM wrapper</query>
+			</source>
+			<query>SELECT fields_you_want_to_select_of_output_structure FROM source1</query>
+		</stream>
+	</streams>
+</virtual-sensor>
