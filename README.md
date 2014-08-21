@@ -3,6 +3,8 @@
 GSN+ is an extension of the [GSN](https://github.com/LSIR/gsn) project.
 GSN+ makes easy to send a message/command from the web interface to the sensors, but the real goal of this project is to make available a two communication-ways between TinyOs and GSN.
 
+Please, before use this project consider to play a little bit with the original GSN project and read its [WIKI](https://github.com/LSIR/gsn/wiki) 
+
 ## Online Documentation
 
 You can find the GSN+ documentation, including a deployment, installation, and programming
