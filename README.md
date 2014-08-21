@@ -13,7 +13,7 @@ This README file only contains basic setup instructions.
 
 First download the code from the git repository:
 
-	git clone git@github.com:LSIR/gsn.git
+	git clone git@github.com:alessiodimichelangeli/gsnplus.git
 
 GSN requires the following software for building:
 
@@ -35,3 +35,7 @@ To stop GSN:
 
 
 
+## Credits
+
+Thanks to the original GSN Project.
+See https://github.com/LSIR/gsn/
