@@ -25,7 +25,7 @@
 	<storage history-size="5m" />
 	<streams>
 		<stream name="input1">
-			<source alias="source1" sampling-rate="1" storage-size="1s">
+			<source alias="source1" sampling-rate="1" storage-size="1">
 				<address wrapper="CommandFromWebWrapper">
 				</address>
 				<query>SELECT switcher FROM wrapper</query>
