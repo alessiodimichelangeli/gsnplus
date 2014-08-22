@@ -89,7 +89,7 @@ public class TinyOsWrapperTEMPLATE extends AbstractWrapper implements net.tinyos
 		you have to re-generate the message via mig 
 		(mig -target=null -java-classname="YOUR_TINYOS_APP"Msg java "YOUR_TINYOS_APP".h "YOUR_TINYOS_APP" -o > "YOUR_TINYOS_APP"Msg.java).
 		Edit the generated file writing this line: "package gsn.wrappers.tinyos;" on the top of the file
-		and put it into this folder: "YOUR_HOME"/gsn/src/gsn/wrappers/tinyos.
+		and put it into this folder: "YOUR_HOME"/gsnplus/src/gsn/wrappers/tinyos.
 		
 	
 	*/
