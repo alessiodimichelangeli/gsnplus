@@ -106,7 +106,7 @@ public class TinyOsWrapper extends AbstractWrapper implements net.tinyos.message
   	private Object packetObject;
 	//
 	
-	private final transient Logger logger = Logger.getLogger( MyWrapperTinyOS.class );
+	private final transient Logger logger = Logger.getLogger( TinyOsWrapper.class );
 	private int threadCounter = 0;
 	
 	
