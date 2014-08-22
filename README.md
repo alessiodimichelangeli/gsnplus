@@ -18,9 +18,9 @@ Please, before use this project consider to play a little bit with the original 
 You can find the GSN+ documentation, including a deployment, installation, and programming
 guide, on the project [GSN+ WIKI](https://github.com/alessiodimichelangeli/gsnplus/wiki).
 
-After the installation you can see the running server at: http://localhost:22001
+After the installation you can see the running server at: [http://localhost:22001](http://localhost:22001)
 
 ## Credits
 
 Thanks to the original GSN Project.
-See https://github.com/LSIR/gsn/
+See [https://github.com/LSIR/gsn/](https://github.com/LSIR/gsn/) .
