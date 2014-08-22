@@ -39,7 +39,7 @@ public class BridgeWebInputVirtualSensor extends AbstractVirtualSensor {
 	private final String                  INPUT_STREAM_NAME = "input1";
 	private VSensorConfig 		      vsensor;
 	//
-    	private static final transient Logger logger = Logger.getLogger(ProvaVirtualSensor.class);
+    	private static final transient Logger logger = Logger.getLogger(BridgeWebInputVirtualSensor.class);
     	private boolean allow_nulls = true; // by default allow nulls
 	/**************************/
 	
