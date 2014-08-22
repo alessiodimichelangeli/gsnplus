@@ -1,0 +1,3 @@
+COMPONENT=TelosbSensorReadingNoMessageEditsAppC
+
+include $(MAKERULES)
