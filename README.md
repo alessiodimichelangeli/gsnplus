@@ -3,39 +3,22 @@
 GSN+ is an extension of the [GSN](https://github.com/LSIR/gsn) project.
 GSN+ makes easy to send a message/command from the web interface to the sensors, but the real goal of this project is to make available a two communication-ways between TinyOs and GSN.
 
-Please, before use this project consider to play a little bit with the original GSN project and read its [WIKI](https://github.com/LSIR/gsn/wiki) 
+More precisely this project provide:
+- an easy way to upload data from the sensor to the gsn server
+- an easy way to connect a tinyos network with gsn
+- a real implementation with one/two telosb motes, as readers and one telosb mote, as base station that, through a serial forwarder, they send data to the gsn server. Of course is also possible to send data back to the telosb sensors (example change the interval value, play with the leds). 
+There is also an alternative app very similar to the previous one.
 
-## Online Documentation
+For both there are templates and readme to easily understand how to build a new virtual sensor, a new wrapper and also a new tinyos based software for the sensors. 
+
+Please, before use this project consider to play a little bit with the original GSN project and read its [gsn wiki](https://github.com/LSIR/gsn/wiki). 
+
+## Installation and Online Documentation
 
 You can find the GSN+ documentation, including a deployment, installation, and programming
-guide, on the project [wiki](https://github.com/mysite).
-This README file only contains basic setup instructions.
+guide, on the project [GSN+ WIKI](https://github.com/alessiodimichelangeli/gsnplus/wiki).
 
-## Building
-
-First download the code from the git repository:
-
-	git clone git@github.com:alessiodimichelangeli/gsnplus.git
-
-GSN requires the following software for building:
-
-* Jakarta apache ant version 1.7.x or higher.
-* Java JDK 1.6.x .
-
-To build GSN follow these steps:
-* Add ANT_HOME/bin folder to your PATH
-* Execute ant with the build task:
-	``ant build``
-
-To run GSN from the source code, you can run the following ant task:
-	``ant gsn``
-
-To stop GSN:
-	``ant stop``
-
-## Loading your first virtual sensor
-
-to write...
+After the installation you can see the running server at: http://localhost:22001
 
 ## Credits
 
