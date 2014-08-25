@@ -64,19 +64,19 @@ public class CommandFromWebWrapper extends AbstractWrapper {
   	public void run() {
 
 			while (isActive()) {
-      			try {
+      			  try {
         			// delay 
         			Thread.sleep(100);
-      			} catch (InterruptedException e) {
+      			  } catch (InterruptedException e) {
         			logger.error(e.getMessage(), e);
-      			}
+      			  }
 
 				// post the data to GSN
-      			if (switcher==0){
+      			  if (switcher==0){
       				postStreamElement(new Serializable[] { switcher });
-      			}       
+      			  }       
 				    
-    		}
+    		        }
     
 
     }
