@@ -48,6 +48,8 @@ public class CommandFromWebWrapperTEMPLATE extends AbstractWrapper {
 
 	private int counter;
 	
+	//you have to initialize the field that you want to modify via web upload
+	private int field1=0; //for example
 
 
 
@@ -61,6 +63,24 @@ public class CommandFromWebWrapperTEMPLATE extends AbstractWrapper {
   	
   	
   	public void run() {
+  		while (isActive()) {
+      			try {
+        			// delay 
+        			Thread.sleep(100);
+      			} catch (InterruptedException e) {
+        			logger.error(e.getMessage(), e);
+      			}
+
+				
+      			//The first time due to the fact that there aren't other fields, 
+      			//you have to initialize the field. 
+      			//Because of we have assigned the variable 0, we use this trick.
+      			if (field1==0){
+      				// post the data to GSN
+      				postStreamElement(new Serializable[] { field1 });
+      			}       
+				    
+    		}
   
   	}
 
@@ -92,10 +112,10 @@ public class CommandFromWebWrapperTEMPLATE extends AbstractWrapper {
 				
 				//get the updated field value from web interface
 				String updatedFieldString= paramValues[0].toString();
-				int updatedField= Integer.parseInt(updatedFieldString);
+				field1= Integer.parseInt(updatedFieldString);
 				
 				//remember, the new field value will be sent to gsn --> NOT USEFUL
-				postStreamElement(new Serializable[] { updatedField });  
+				postStreamElement(new Serializable[] { field1 });  
 				//is better to replace the latest command with a real send to sensors 
 				//see /gsn/src/gsn/wrappers/tinyos/TinyOsWrapperTEMPLATE 
 				
