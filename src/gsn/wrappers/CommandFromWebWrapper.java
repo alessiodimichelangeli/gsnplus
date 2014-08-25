@@ -48,7 +48,7 @@ public class CommandFromWebWrapper extends AbstractWrapper {
   	
   	private AddressBean params;
 
-
+	private int switcher=0;
 
 
   	public boolean initialize() {
@@ -62,8 +62,24 @@ public class CommandFromWebWrapper extends AbstractWrapper {
   
   	
   	public void run() {
+
+			while (isActive()) {
+      			try {
+        			// delay 
+        			Thread.sleep(100);
+      			} catch (InterruptedException e) {
+        			logger.error(e.getMessage(), e);
+      			}
+
+				// post the data to GSN
+      			if (switcher==0){
+      				postStreamElement(new Serializable[] { switcher });
+      			}       
+				    
+    		}
     
-    	}
+
+    }
   
 
   	public DataField[] getOutputFormat() {
@@ -89,10 +105,10 @@ public class CommandFromWebWrapper extends AbstractWrapper {
 				System.out.println(paramValues[0]);
 				
 				String updatedSwitcherString= paramValues[0].toString();
-				int updatedSwitcher= Integer.parseInt(updatedSwitcherString);
 				
-				postStreamElement(new Serializable[] { updatedSwitcher });  
-				//postStreamElement(new Serializable[] { Integer.parseInt(paramValues[0].toString()) }); 
+				switcher= Integer.parseInt(updatedSwitcherString);				
+
+				postStreamElement(new Serializable[] { switcher });
 				
 				System.out.println("END SEND !!!");
 				
@@ -103,4 +119,3 @@ public class CommandFromWebWrapper extends AbstractWrapper {
   
  
 }
-  
