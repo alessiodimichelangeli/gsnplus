@@ -1,0 +1,45 @@
+<virtual-sensor name="Tossim" priority="11">
+	<processing-class>
+		<class-name>gsn.vsensor.BridgeWebInputVirtualSensor</class-name>
+		
+		<init-params />
+		
+		<web-input password="counter">
+			<command name="reset_counter_at">
+				<field name="counter" type="int">Insert the new counter reset value.</field>
+			</command>
+			
+	        </web-input>
+		
+		<output-structure>
+			
+			<field name="counter" type="int"/>
+
+		</output-structure>
+		
+		
+	</processing-class>
+
+	<description>
+		This virtual sensor allows to test tinyos integration via tossim. It is a two ways communication. 
+	</description>
+	<life-cycle pool-size="10" />
+	<addressing>
+		<predicate key="geographical">Not Specified</predicate>
+		<predicate key="LATITUDE">37.5419</predicate>
+		<predicate key="LONGITUDE">-122.1419</predicate>
+	</addressing>
+	<storage history-size="10" />
+	<streams>
+		<stream name="input1">
+			<source alias="source1" sampling-rate="1" storage-size="1">
+				<address wrapper="TossimGsnplusWrapper">
+					<predicate key="host">localhost</predicate>
+					<predicate key="port">9002</predicate>
+				</address>
+				<query>SELECT * FROM wrapper</query>
+			</source>
+			<query>SELECT * FROM source1</query>
+		</stream>
+	</streams>
+</virtual-sensor>
