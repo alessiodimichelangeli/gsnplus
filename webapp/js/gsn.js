@@ -565,7 +565,7 @@ var GSN = {
 			
                 //create vsbox on the first load
                 if (firstload && GSN.context == "home") {
-                    for (var i = 0; i < 0; ++i){
+                    for (var i = 0; i < 10; ++i){
                         var n = $($("virtual-sensor",data).get(i)).attr("name");
                         if (n!=null) GSN.vsbox.add(n);
                     }
