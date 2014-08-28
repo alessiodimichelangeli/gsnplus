@@ -21,6 +21,13 @@ Therefore, you have to write a new TinyOs Virtual Sensor for each mote of your n
 ATTENTION!!! You can't set the interval value too small. You have to consider that from a query to the new one must spend at least a second so, you can't set the interval in the way that two messages arrive in less than 1 second.
 
 
+**** ABOUT TOSSIM VS: ****
+
+If you want to test the TinyOs integration with GSN+, please cut the TOSSIM.xml file and paste it into the folder virtual-sensors .
+You have to follow the WIKI instruction but the most important thing is that, after the previous operation, before running
+GSN+ (via ant gsn) you have to launch the python script (TossimGsnplus.py) located into the folder of the TossimGsnplus app.
+This is because GSN+ has to read messages coming from the Serial Forwarder written by the TossimGsnplus app otherwise 
+GSN+ will stop immediately. 
 
 
 
