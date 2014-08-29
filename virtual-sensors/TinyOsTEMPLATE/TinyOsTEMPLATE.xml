@@ -56,7 +56,7 @@
 	<storage history-size="10" />
 	<streams>
 		<stream name="input1">
-			<source alias="source1" sampling-rate="1" storage-size="1s">
+			<source alias="source1" sampling-rate="1" storage-size="1">
 				<address wrapper="TINYOS_WRAPPER_NAME (see TinyOsWrapperTEMPLATE file)">
 					<predicate key="host">localhost</predicate>
 					<predicate key="port">9002</predicate>
