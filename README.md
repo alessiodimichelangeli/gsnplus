@@ -6,10 +6,11 @@ GSN+ makes easy to send a message/command from the web interface to the sensors,
 More precisely this project provide:
 - an easy way to upload data from the sensor to the gsn server with examples
 - an easy way to connect a tinyos network with gsn with examples
+- a simulated implementation with TOSSIM LIVE, basically you can test the integration between GSN+ and TinyOs without having the real sensors
 - a real implementation with one/two telosb motes, as readers and one telosb mote, as base station that, through a serial forwarder, they send data to the gsn server. Of course is also possible to send data back to the telosb sensors (example change the interval value, play with the leds). 
 There is also an alternative app very similar to the previous one.
 
-For both there are templates and readme to easily understand how to build a new virtual sensor, a new wrapper and also a new tinyos based software for the sensors. 
+For all of them there are templates and readme to easily understand how to build a new virtual sensor, a new wrapper and also a new tinyos based software for the sensors. 
 
 Please, before use this project consider to play a little bit with the original GSN project and read its [gsn wiki](https://github.com/LSIR/gsn/wiki). 
 
