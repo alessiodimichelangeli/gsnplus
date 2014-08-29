@@ -47,7 +47,7 @@
 	<storage history-size="5m" />
 	<streams>
 		<stream name="input1">
-			<source alias="source1" sampling-rate="1" storage-size="1s">
+			<source alias="source1" sampling-rate="1" storage-size="1">
 				<address wrapper="TINYOS_WRAPPER_NAME (see CommandFromWebTEMPLATE file)">
 				</address>
 				
