@@ -21,6 +21,10 @@ guide, on the project [GSN+ WIKI](https://github.com/alessiodimichelangeli/gsnpl
 
 After the installation you can see the running server at: [http://localhost:22001](http://localhost:22001) .
 
+## Easy way to test it
+
+I created a virtual box machine to test GSN+. You can download instructions and the virtual machine at the following link ...SOON waiting for the dropbox uploading process :)
+
 ## Credits
 
 Thanks to the original GSN Project.
