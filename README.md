@@ -23,7 +23,9 @@ After the installation you can see the running server at: [http://localhost:2200
 
 ## Easy way to test it
 
-I created a virtual box machine to test GSN+. You can download instructions and the virtual machine at the following link ...SOON waiting for the dropbox uploading process :)
+I created a virtual box machine to test GSN+. You can download instructions and the virtual machine at the following links:
+- [Instructions](https://dl.dropboxusercontent.com/u/4915790/GSNPLUSvb/Instructions.pdf)
+- [Virtual Machine](https://dl.dropboxusercontent.com/u/4915790/GSNPLUSvb/GSNPLUS%20clone.vdi.rar)
 
 ## Credits
 
